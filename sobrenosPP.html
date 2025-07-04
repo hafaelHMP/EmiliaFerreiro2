@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" href="logocircular.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.E Emília Ferreiro</title>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Baloo 2', Arial, sans-serif; background: #f0f0f0; }
+    a { text-decoration: none; }
+
+    #header-container {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform .3s ease-in-out;
+    }
+
+    #header-container.hide { transform: translateY(-100%); }
+
+    .header, .white-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4vw;
+    }
+
+    .header {
+      background: rgba(128,128,128,0.4);
+      height: 48px;
+      border-radius: 0 0 15px 15px;
+    }
+
+    .white-header {
+      background: #fff;
+      height: 88px;
+      gap: 2vw;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo { border-radius: 50%; object-fit: cover; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5vw;
+    }
+
+    .nav-links a {
+      font-family: 'Fredoka One', 'Comic Sans MS', cursive, sans-serif;
+      font-weight: bold;
+      color: #222;
+      border: 2px solid #000;
+      border-radius: 999px;
+      padding: 7px 22px;
+      transition: .1s;
+    }
+
+    .nav-links a:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .header button {
+      background: linear-gradient(to right,#ffd700,#ff4500);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 1vh 3vw;
+      font-family: 'Fredoka One', 'Comic Sans MS', cursive, sans-serif;
+      letter-spacing: 1px;
+      font-weight: bold;
+      cursor: pointer;
+      text-shadow: -1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    }
+
+    .phone { font-weight: 500; }
+
+    main { padding-top: 140px; }
+
+    @media(max-width:767px){
+      .header { height: 48px; }
+      .white-header {
+        flex-direction: row;
+        gap: 2vw;
+        padding: 2vh 4vw;
+        height: auto;
+      }
+      .logo { width: 12vw; height: 12vw; max-width: 52px; max-height: 52px; }
+      .nav-links { gap: 2vw; justify-content: flex-end; }
+      .nav-links a {
+        font-size: 13px;
+        padding: 0.4em 1em;
+        max-width: 32vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .phone { font-size: 4vw; }
+      .header button { font-size: 4vw; }
+    }
+
+    @media(min-width:768px){
+      .header { border-radius: 0; }
+      .logo { width: 70px; height: 70px; max-width: 70px; max-height: 70px; }
+      .white-header { padding: 16px 4vw; gap: 2vw; }
+      .nav-links a { font-size: 15px; max-width: 190px; }
+      .phone, .header button { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-container">
+    <div class="header">
+      <button onclick="window.location.href='https://wa.me/5531986330565?text=Ol%C3%A1,%20Tenho%20interesse%20sobre%20a%20creche%20e%20quero%20mais%20informa%C3%A7%C3%B5es,%20por%20favor';">Marque Uma Visita!</button>
+      <a href="tel:+5531986330565" class="phone" style="text-decoration: underline;">📞 (31) 9 8633-0565</a>
+    </div>
+    <div class="white-header">
+<a href="index.html">
+      <img class="logo" src="logo.png" alt="Logo" />
+</a>
+      <div class="nav-links">
+        <a href="sobrenos.html">Sobre Nós</a>
+        <a href="localizacao.html">Localização</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Conteúdo novo começa aqui -->
+  </main>
+
+<p>.<br>.<br>.<br>.<br>.<br>.<br>SOBRENÓS<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>
+.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br></p>
+
+  <script>
+    let lastScrollTop = 0;
+    const header = document.getElementById('header-container');
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      header.classList.toggle('hide', scrollTop > lastScrollTop);
+      lastScrollTop = Math.max(scrollTop, 0);
+    });
+  </script>
+</body>
+</html>
